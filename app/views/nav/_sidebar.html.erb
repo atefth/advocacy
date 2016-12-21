@@ -1,0 +1,69 @@
+<div class="navbar-default sidebar" role="navigation">
+	<div class="sidebar-nav navbar-collapse">
+		<ul class="nav" id="side-menu">
+			<li class="sidebar-search">
+				<div class="input-group custom-search-form">
+					<input type="text" class="form-control" placeholder="Search...">
+					<span class="input-group-btn">
+						<button class="btn btn-default" type="button">
+							<i class="fa fa-search"></i>
+						</button>
+					</span>
+				</div>
+				<!-- /input-group -->
+			</li>
+			<li>
+				<a href="<%= dashboard_path %>"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
+			</li>
+			<li>
+				<a href="#"><i class="fa fa-folder fa-fw"></i> Case Files<span class="fa arrow"></span></a>
+				<ul class="nav nav-second-level">
+					<li>
+						<a href="<%= case_files_path %>">View All</a>
+					</li>
+					<li>
+						<a href="<%= new_case_file_path %>">Add New</a>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<a href="#"><i class="fa fa-user-secret fa-fw"></i> Advocates<span class="fa arrow"></span></a>
+				<ul class="nav nav-second-level">
+					<li>
+						<a href="<%= advocates_path %>">View All</a>
+					</li>
+					<li>
+						<a href="<%= new_advocate_path %>">Add New</a>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<a href="#"><i class="fa fa-user fa-fw"></i> Clients<span class="fa arrow"></span></a>
+				<ul class="nav nav-second-level">
+					<li>
+						<a href="<%= clients_path %>">View All</a>
+					</li>
+					<li>
+						<a href="flot.html">View Running</a>
+					</li>
+					<li>
+						<a href="<%= new_client_path %>">Add New</a>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<a href="#"><i class="fa fa-check-circle fa-fw"></i> Convocations<span class="fa arrow"></span></a>
+				<ul class="nav nav-second-level">
+					<li>
+						<a href="flot.html">View All</a>
+					</li>
+					<li>
+						<a href="flot.html">View Upcoming</a>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</div>
+	<!-- /.sidebar-collapse -->
+</div>
+<!-- /.navbar-static-side -->

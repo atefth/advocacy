@@ -1,0 +1,57 @@
+<%= form_for(case_file) do |f| %>
+  <% if case_file.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(case_file.errors.count, "error") %> prohibited this case_file from being saved:</h2>
+
+      <ul>
+      <% case_file.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+  </div>
+
+  <div class="field">
+    <%= f.label :file_received_on %>
+    <%= f.date_select :file_received_on %>
+  </div>
+
+  <div class="field">
+    <%= f.label :advocate_id %>
+    <%= f.number_field :advocate_id %>
+  </div>
+
+  <div class="field">
+    <%= f.label :client_id %>
+    <%= f.number_field :client_id %>
+  </div>
+
+  <div class="field">
+    <%= f.label :appeal_on %>
+    <%= f.date_select :appeal_on %>
+  </div>
+
+  <div class="field">
+    <%= f.label :convocation_on %>
+    <%= f.date_select :convocation_on %>
+  </div>
+
+  <div class="field">
+    <%= f.label :amount_paid %>
+    <%= f.text_field :amount_paid %>
+  </div>
+
+  <div class="field">
+    <%= f.label :status %>
+    <%= f.number_field :status %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

@@ -1,5 +1,23 @@
-<h1>New Advocate</h1>
-
-<%= render 'form', advocate: @advocate %>
-
-<%= link_to 'Back', advocates_path %>
+<div class="row" align="center">
+	<div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+	</div>
+	<div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+		<div class="row">
+			<div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+				<a class="btn btn-nav" href="<%= advocates_path %>"> <i class="fa fa-list-ol fa-2x"></i></a>
+			</div>
+			<div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+				<h2>New<small> Advocate</small></h2>
+			</div>
+		</div>
+	</div>
+	<div class="col-lg-2 col-md-2 col-sm-2 col-xs-2"></div>
+</div>
+<div class="row" align="center">
+	<div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+	</div>
+	<div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+		<%= render 'form', advocate: @advocate %>
+	</div>
+	<div class="col-lg-2 col-md-2 col-sm-2 col-xs-2"></div>
+</div>

@@ -1,57 +1,85 @@
-<%= form_for(case_file) do |f| %>
-  <% if case_file.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(case_file.errors.count, "error") %> prohibited this case_file from being saved:</h2>
+<%= form_for(case_file, html: {role: 'form', class: 'form-horizontal'}) do |f| %>
+<% if case_file.errors.any? %>
+<div id="error_explanation">
+  <h2><%= pluralize(case_file.errors.count, "error") %> prohibited this case_file from being saved:</h2>
 
-      <ul>
-      <% case_file.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
+  <ul>
+    <% case_file.errors.full_messages.each do |message| %>
+    <li><%= message %></li>
+    <% end %>
+  </ul>
+</div>
+<% end %>
 
-  <div class="field">
-    <%= f.label :name %>
-    <%= f.text_field :name %>
+<div class="form-group">
+  <div class="col-lg-10 col-lg-offset-1">
+    <%= f.label :name, class: 'sr-only' %>
+    <%= f.text_field :name, class: 'form-control', placeholder: 'Case Name' %>
   </div>
+</div>
 
-  <div class="field">
-    <%= f.label :file_received_on %>
-    <%= f.date_select :file_received_on %>
+<div class="form-group">
+  <div class="col-lg-3 col-lg-offset-1" align="left">
+    <%= f.label :advocate_id, "Adovcate Name" %>
   </div>
+  <div class="col-lg-7">
+    <%= select_tag :advocate_id, options_from_collection_for_select(@advocates, "id", "name"), class: 'form-control' %>
+  </div>
+</div>
 
-  <div class="field">
-    <%= f.label :advocate_id %>
-    <%= f.number_field :advocate_id %>
+<div class="form-group">
+  <div class="col-lg-3 col-lg-offset-1" align="left">
+    <%= f.label :client_id, "Client Name" %>
   </div>
+  <div class="col-lg-7">
+    <%= select_tag :client_id, options_from_collection_for_select(@clients, "id", "name"), class: 'form-control' %>
+  </div>
+</div>
 
-  <div class="field">
-    <%= f.label :client_id %>
-    <%= f.number_field :client_id %>
+<div class="form-group">
+  <div class="col-lg-3 col-lg-offset-1" align="left">
+    <%= f.label :file_received_on, "Received On" %>
   </div>
+  <div class="col-lg-7">
+    <%= f.date_select :file_received_on, {}, {class: 'form-control form-control-date'} %>
+  </div>
+</div>
 
-  <div class="field">
-    <%= f.label :appeal_on %>
-    <%= f.date_select :appeal_on %>
+<div class="form-group">
+  <div class="col-lg-3 col-lg-offset-1" align="left">
+    <%= f.label :appeal_on, "Appeal On" %>
   </div>
+  <div class="col-lg-7">
+    <%= f.date_select :appeal_on, {}, {class: 'form-control form-control-date'} %>
+  </div>
+</div>
 
-  <div class="field">
-    <%= f.label :convocation_on %>
-    <%= f.date_select :convocation_on %>
+<div class="form-group">
+  <div class="col-lg-3 col-lg-offset-1" align="left">
+    <%= f.label :convocation_on, "Convocation On" %>
   </div>
+  <div class="col-lg-7">
+    <%= f.date_select :convocation_on, {}, {class: 'form-control form-control-date'} %>
+  </div>
+</div>
 
-  <div class="field">
-    <%= f.label :amount_paid %>
-    <%= f.text_field :amount_paid %>
+<div class="form-group">
+  <div class="col-lg-10 col-lg-offset-1">
+    <%= f.label :amount_paid, class: 'sr-only' %>
+    <%= f.text_field :amount_paid, class: 'form-control', placeholder: 'Amount Paid' %>
   </div>
+</div>
 
-  <div class="field">
-    <%= f.label :status %>
-    <%= f.number_field :status %>
+<div class="form-group">
+  <div class="col-lg-10 col-lg-offset-1">
+    <%= f.label :status, class: 'sr-only' %>
+    <%= f.number_field :status, class: 'form-control', placeholder: 'Status' %>
   </div>
+</div>
 
-  <div class="actions">
-    <%= f.submit %>
+<div class="form-group">
+  <div class="col-lg-10 col-lg-offset-1">
+  <%= f.submit "Submit", class: 'btn btn-success btn-block' %>
   </div>
+</div>
 <% end %>

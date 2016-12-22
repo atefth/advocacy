@@ -14,5 +14,6 @@
  *= require leaflet
  *= require font-awesome
  *= require admin-theme
+ *= require dashboard
  *= require_self
  */

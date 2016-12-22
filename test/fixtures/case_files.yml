@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  file_received_on: 2016-12-21
+  advocate_id: 1
+  client_id: 1
+  appeal_on: 2016-12-21
+  convocation_on: 2016-12-21
+  amount_paid: MyString
+  status: 1
+
+two:
+  name: MyString
+  file_received_on: 2016-12-21
+  advocate_id: 1
+  client_id: 1
+  appeal_on: 2016-12-21
+  convocation_on: 2016-12-21
+  amount_paid: MyString
+  status: 1

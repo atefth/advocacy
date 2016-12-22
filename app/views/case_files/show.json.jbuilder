@@ -1,0 +1,1 @@
+json.partial! "case_files/case_file", case_file: @case_file

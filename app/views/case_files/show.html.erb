@@ -1,0 +1,44 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @case_file.name %>
+</p>
+
+<p>
+  <strong>File received on:</strong>
+  <%= @case_file.file_received_on %>
+</p>
+
+<p>
+  <strong>Advocate:</strong>
+  <%= @case_file.advocate_id %>
+</p>
+
+<p>
+  <strong>Client:</strong>
+  <%= @case_file.client_id %>
+</p>
+
+<p>
+  <strong>Appeal on:</strong>
+  <%= @case_file.appeal_on %>
+</p>
+
+<p>
+  <strong>Convocation on:</strong>
+  <%= @case_file.convocation_on %>
+</p>
+
+<p>
+  <strong>Amount paid:</strong>
+  <%= @case_file.amount_paid %>
+</p>
+
+<p>
+  <strong>Status:</strong>
+  <%= @case_file.status %>
+</p>
+
+<%= link_to 'Edit', edit_case_file_path(@case_file) %> |
+<%= link_to 'Back', case_files_path %>

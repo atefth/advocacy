@@ -1,14 +1,49 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <title>App</title>
-    <%= csrf_meta_tags %>
+<html lang="en">
+	<head>
+		<title>Advocacy</title>
+		<%= csrf_meta_tags %>
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
-
-  <body>
-    <%= yield %>
-  </body>
-</html>
+		<meta charset="utf-8">
+		<meta name="description" content="place your description here" />
+		<meta name="author" content="Your name">
+		<meta name="keywords" content="Your keywords" />
+		<!-- CSS -->
+		<%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+	</head>
+	<body>
+		<div>
+			<div class="row">
+				<%= render "nav/top", locals: {page: @page} %>
+			</div>
+			<div class="row">
+				<div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+					<%= render "nav/sidebar" %>
+				</div>
+				<div class="col-lg-10 col-md-10 col-sm-10 col-xs-10" style="padding-right: 0px;">
+					<div class="jumbotron">
+						<div class="container">
+							<%= yield %>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<%= render "nav/bot" %>
+			</div>
+		</div>
+		<!-- JavaScript at the bottom for fast page loading -->
+		<%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+		<!-- Google Analytics: change UA-XXXXX-X to be your site's ID.-->
+		<script>
+			var _gaq = _gaq || [];
+			_gaq.push(['_setAccount', 'UA-XXXXX-X']);
+			_gaq.push(['_trackPageview']);
+			(function() {
+				var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+				ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+				var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+			})();
+		</script>
+	</body>
+	</html>

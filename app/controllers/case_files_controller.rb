@@ -15,6 +15,8 @@ class CaseFilesController < ApplicationController
   # GET /case_files/new
   def new
     @case_file = CaseFile.new
+    @advocates = Advocate.all()
+    @clients = Client.all()
   end
 
   # GET /case_files/1/edit

@@ -1,6 +1,14 @@
 class ClientsController < ApplicationController
   before_action :set_client, only: [:show, :edit, :update, :destroy]
 
+  # GET /clients/running
+  # GET /clients/running.json
+  def running
+    @heading = 'Running'
+    @clients = Client.running
+    render :index
+  end
+
   # GET /clients
   # GET /clients.json
   def index

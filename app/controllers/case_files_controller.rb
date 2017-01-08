@@ -7,6 +7,22 @@ class CaseFilesController < ApplicationController
     @case_files = CaseFile.all
   end
 
+  # GET /case_files/completed
+  # GET /case_files/completed.json
+  def completed
+    @heading = 'Completed'
+    @case_files = CaseFile.completed
+    render :index
+  end
+
+  # GET /case_files/upcoming
+  # GET /case_files/upcoming.json
+  def upcoming
+    @heading = 'Upcoming'
+    @case_files = CaseFile.upcoming
+    render :index
+  end
+
   # GET /case_files/1
   # GET /case_files/1.json
   def show
@@ -21,6 +37,8 @@ class CaseFilesController < ApplicationController
 
   # GET /case_files/1/edit
   def edit
+    @advocates = Advocate.all()
+    @clients = Client.all()
   end
 
   # POST /case_files

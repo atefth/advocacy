@@ -1,23 +1,18 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Name:</strong>
-  <%= @case_file.name %>
-</p>
-
-<p>
   <strong>File received on:</strong>
   <%= @case_file.file_received_on %>
 </p>
 
 <p>
   <strong>Advocate:</strong>
-  <%= @case_file.advocate_id %>
+  <%= @case_file.advocate.name %>
 </p>
 
 <p>
   <strong>Client:</strong>
-  <%= @case_file.client_id %>
+  <%= @case_file.client.name %>
 </p>
 
 <p>

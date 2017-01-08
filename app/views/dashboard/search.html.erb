@@ -1,0 +1,42 @@
+<div class="page-header">
+	<h1>Search<small> Results</small></h1>
+</div>
+
+<div class="row">
+	<div class="col-lg-4" align="center">
+		<h3>Clients</h3>
+		<div class="row">
+		<% if !@clients.blank? %>
+			<% for client in @clients %>
+				<span class="btn btn-info"><%= link_to client.name, client_path(client) %></span>
+			<% end %>
+			<% else %>
+				<small>No results.</small>
+			<% end %>
+		</div>
+	</div>
+	<div class="col-lg-4" align="center">
+		<h3>Advocates</h3>
+		<div class="row">
+		<% if !@advocates.blank? %>
+			<% for advocate in @advocates %>
+				<span class="btn btn-info"><%= link_to advocate.name, advocate_path(advocate) %></span>
+			<% end %>
+			<% else %>
+				<small>No results.</small>
+			<% end %>
+		</div>
+	</div>
+	<div class="col-lg-4" align="center">
+		<h3>Case Files</h3>
+		<div class="row">
+		<% if !@case_files.blank? %>
+			<% for case_file in @case_files %>
+				<span class="btn btn-info"><%= link_to case_file.name, case_file_path(case_file) %></span>
+			<% end %>
+			<% else %>
+				<small>No results.</small>
+			<% end %>
+		</div>
+	</div>
+</div>
